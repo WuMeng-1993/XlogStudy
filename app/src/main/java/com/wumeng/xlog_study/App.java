@@ -2,7 +2,9 @@ package com.wumeng.xlog_study;
 
 import android.app.Application;
 
+import com.tencent.mars.xlog.Log;
 import com.tencent.mars.xlog.Xlog;
+import com.wumeng.xlog_study.log.LogManager;
 
 /**
  * @author WuMeng
@@ -14,12 +16,12 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Xlog.open(true,Xlog.LEVEL_DEBUG,
-                Xlog.AppednerModeAsync,
-                "",
-                "",
-                "ECARX",
-                "");
+        LogManager.init(this,BuildConfig.DEBUG ? Xlog.LEVEL_DEBUG : Xlog.LEVEL_INFO);
     }
 
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        Log.appenderClose();
+    }
 }

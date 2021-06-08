@@ -25,6 +25,16 @@ public class Xlog implements Log.LogImp {
 		public long maintid;
 	}
 
+	/**
+	 *
+	 * @param isLoadLib 是否加载so库
+	 * @param level 日志的级别
+	 * @param mode 写入的模式(同步，异步)
+	 * @param cacheDir 缓存的文件夹
+	 * @param logDir Log的文件夹
+	 * @param nameprefix 日志的文件名前缀
+	 * @param pubkey 加密的publicKey
+	 */
 	public static void open(boolean isLoadLib, int level, int mode, String cacheDir, String logDir, String nameprefix, String pubkey) {
 		if (isLoadLib) {
 			System.loadLibrary("c++_shared");
