@@ -30,7 +30,7 @@ public class LogManager {
                 "Navi",
                 ""
                 );
-        Xlog.setMaxFileSize(10);
+        Xlog.setMaxFileSize(1024 * 1024);
     }
 
 }

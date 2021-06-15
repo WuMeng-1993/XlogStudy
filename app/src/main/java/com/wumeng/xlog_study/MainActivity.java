@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for (int i = 0; i < 1000; i++) {
+                for (int i = 0; i < 100000; i++) {
                     Log.d("WuMeng","asdjaosdjasodjasldj");
                 }
             }
